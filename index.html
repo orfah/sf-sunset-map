@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html data-ng-app="app">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>San Francisco Sunset Developers</title>
@@ -78,41 +78,41 @@
   		  cursor: pointer;
 		  }
 		  
-		  .label0 {
-  		  background: rgba(30,168,255,0.79);
-		  }
-		  .ul0 {
-  		  background: rgba(30,168,255,0.19);
-		  }
-		  .label1 {
-  		  background: rgba(255,105,79,0.79);
-		  }
-		  .ul1 {
-  		  background: rgba(255,105,79,0.19);
-		  }
-		  .label2 {
-  		  background: rgba(0,249,87,0.79);
-		  }
-		  .ul2 {
-  		  background: rgba(0,249,87,0.19);
-		  }
-		  .label3 {
-  		  background: rgba(228,250,0,0.79);
-		  }
-		  .ul3 {
-  		  background: rgba(228,250,0,0.19);
-		  }
-		  .label4 {
-  		  background: rgba(197,98,255,0.79);
-		  }
-		  .ul4 {
-  		  background: rgba(197,98,255,0.19);
-		  }
-		  .label5 {
+		  .mckeon {
   		  background: rgba(255,180,22,0.79);
 		  }
-		  .ul5 {
+		  .mckeon+ul {
   		  background: rgba(255,137,1,0.19);
+		  }
+		  .gellert {
+  		  background: rgba(255,105,79,0.79);
+		  }
+		  .gellert+ul {
+  		  background: rgba(255,105,79,0.19);
+		  }
+		  .galli {
+  		  background: rgba(0,249,87,0.79);
+		  }
+		  .galli+ul {
+  		  background: rgba(0,249,87,0.19);
+		  }
+		  .nelson {
+  		  background: rgba(228,250,0,0.79);
+		  }
+		  .nelson+ul {
+  		  background: rgba(228,250,0,0.19);
+		  }
+		  .rousseau {
+  		  background: rgba(197,98,255,0.79);
+		  }
+		  .rousseau+ul {
+  		  background: rgba(197,98,255,0.19);
+		  }
+		  .doelger {
+  		  background: rgba(30,168,255,0.79);
+		  }
+		  .doelger+ul {
+  		  background: rgba(30,168,255,0.19);
 		  }
 		  .expander {
   		  cursor: pointer;
@@ -131,13 +131,31 @@
 	 <div id="container">
 	   <div id="title">San Francisco Sunset Developer Map</div>
   	 <div id="map"></div>
-  	 <div id="accordian"></div>
+     <div id="accordian">
+        <div class="accordian-fold" ng-controller="developerListController"> 
+          <developer ng-repeat="developer in developers" ng-controller="developerController">
+            <div class="label {{developer.name}}">
+              <input type="checkbox" ng-click="toggleSites(developer.sites)" ng-checked="visible">
+              <span class="expander" ng-class="{expanded: expanded}" expander="toggleClass()">&gt;&gt;</span>
+              {{developer.developer}}
+            </div>
+            <ul ng-class="{hidden: !expanded}">
+              <li hover="highlightMarker(site, site.highlightMarker, site.highlightPolygon)" 
+                  leave="lowlightMarker(site.highlightMarker, site.highlightPolygon)"
+                  click="toggleSite(site, site.visible)" 
+                  ng-repeat="site in developer.sites">
+                <input type="checkbox" ng-checked="site.visible" ng-click="toggleSite(site)"> {{site.description}}
+              </li>
+            </ul>
+          </developer>
+        </div>
+     </div>
 	 </div>
 	 
-	 <script src="js/jquery-1.10.1.js"></script>
+	 <script src="js/angular.min.js"></script>
 	 <script src="js/data.js"></script>
    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	 <script src="js/sfsd.js"></script>
+	 <script src="js/sfsd-angular.js"></script>
 
 	</body>
 </html>

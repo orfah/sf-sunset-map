@@ -1,14 +1,17 @@
 var data = [
     {
         "developer": "McKeon",
-        "color": "#0096ff",
+        "name": "mckeon",
+        "color": "orange",
         "highlightColor": "#fff",
         "sites": [
             {
                 "description": "948 Taraval Street (sales office)",
                 "location": {
-                    "lat": 37.743257,
-                    "lng": -122.476601
+                    "marker": {
+                      "lat": 37.743257,
+                      "lng": -122.476601
+                    }
                 }
             },
             {
@@ -295,21 +298,26 @@ var data = [
     },
     {
         "developer": "Gellert",
-        "color": "#ff5345",
+        "name": "gellert",
+        "color": "red",
         "highlightColor": "#fff",
         "sites": [
             {
                 "description": "2222 19th Avenue, company offices, 1948",
                 "location": {
+                  "marker": {
                     "lat": 37.7463339,
                     "lng": -122.475665
+                  }
                 }
             },
             {
                 "description": "23rd and Vicente, company warehouse (address approximate)",
                 "location": {
+                  "marker": {
                     "lat": 37.7390329,
                     "lng": -122.4794432
+                  }
                 }
             },
             {
@@ -574,7 +582,8 @@ var data = [
     },
     {
         "developer": "R.F. Galli",
-        "color": "#00d01a",
+        "name": "galli",
+        "color": "green",
         "highlightColor": "#fff",
         "sites": [
             {
@@ -607,8 +616,10 @@ var data = [
             {
                 "description": "1590 39th Avenue, Casa Moderna model home, 1940 (no longer standing)",
                 "location": {
+                  "marker": {
                     "lat": 36.7572102,
                     "lng": -122.4981694
+                  }
                 }
             },
             {
@@ -953,7 +964,8 @@ var data = [
     },
     {
         "developer": "Fernando Nelson",
-        "color": "#fdfb00",
+        "name": "nelson",
+        "color": "yellow",
         "highlightColor": "#fff",
         "sites": [
             {
@@ -1090,7 +1102,8 @@ var data = [
     },
     {
         "developer": "Rousseau",
-        "color": "#db55e9",
+        "name": "rousseau",
+        "color": "purple",
         "highlightColor": "#fff",
         "sites": [
             {
@@ -1243,7 +1256,8 @@ var data = [
     },
     {
         "developer": "Doelger",
-        "color": "#ee9e09",
+        "name": "doelger",
+        "color": "blue",
         "highlightColor": "#fff",
         "sites": [
             {
@@ -1276,8 +1290,10 @@ var data = [
             {
                 "description": "320 Judah Street, company offices",
                 "location": {
+                  "marker": {
                     "lat": 37.7622285,
                     "lng": -122.46533
+                  }
                 }
             },
             {
