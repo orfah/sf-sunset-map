@@ -133,7 +133,8 @@
   	 <div id="map"></div>
      <div id="accordian">
         <div class="accordian-fold" ng-controller="developerListController"> 
-          <developer ng-repeat="developer in developers" ng-controller="developerController">
+          <developer ng-repeat="developer in developers | orderBy:'name'" 
+                     ng-controller="developerController">
             <div class="label {{developer.name}}">
               <input type="checkbox" ng-click="toggleSites(developer.sites)" ng-checked="visible">
               <span class="expander" ng-class="{expanded: expanded}" expander="toggleClass()">&gt;&gt;</span>
@@ -143,7 +144,7 @@
               <li hover="highlightMarker(site, site.highlightMarker, site.highlightPolygon)" 
                   leave="lowlightMarker(site.highlightMarker, site.highlightPolygon)"
                   click="toggleSite(site, site.visible)" 
-                  ng-repeat="site in developer.sites">
+                  ng-repeat="site in developer.sites | orderBy:streetName">
                 <input type="checkbox" ng-checked="site.visible" ng-click="toggleSite(site)"> {{site.description}}
               </li>
             </ul>

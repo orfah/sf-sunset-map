@@ -52,7 +52,7 @@ var app = angular.module('app', [])
     var factory = {},
         colorMap = {
             blue: 0, red: 23, green: 46,
-            yellow: 69, purple: 92, orange: 115
+            purple: 69, orange: 92,
         },
         
         icon = {
@@ -166,6 +166,10 @@ var app = angular.module('app', [])
         if (polygon) { polygon.setVisible(false); }
     };
 
+    $scope.streetName = function(site) {
+      var descr = site.description.split(' ');
+      return descr[0].match(/\D/) ? descr[0] : descr[1];
+    };
 })
 
 .controller('developerListController',  ['$scope', 'developerFactory', 'mapFactory', 
