@@ -52,7 +52,7 @@ var app = angular.module('app', [])
     var factory = {},
         colorMap = {
             blue: 0, red: 23, green: 46,
-            purple: 69, orange: 92,
+            yellow: 69, purple: 92, orange: 115
         },
         
         icon = {
